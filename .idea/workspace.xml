@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="499719ef-1bbf-4667-a8ff-7b068d6e61a6" name="Default Changelist" comment="" />
+    <list default="true" id="499719ef-1bbf-4667-a8ff-7b068d6e61a6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Back/controller/playerController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back/controller/userController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back/model/playerManager.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back/model/userManager.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back/service/addPlayService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back/service/listPlayerService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back/service/logService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back/model/manager.php" beforeDir="false" afterPath="$PROJECT_DIR$/Back/model/manager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back/model/players.php" beforeDir="false" afterPath="$PROJECT_DIR$/Back/model/player.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back/model/users.php" beforeDir="false" afterPath="$PROJECT_DIR$/Back/model/user.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,9 +34,12 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/scratch" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1YzBWQcuuk1fuhIbqhfHA3xxI4t" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -58,7 +74,7 @@
       <workItem from="1583936610411" duration="201000" />
       <workItem from="1583936904248" duration="58000" />
       <workItem from="1583939981510" duration="919000" />
-      <workItem from="1583941650311" duration="1889000" />
+      <workItem from="1583941650311" duration="2076000" />
     </task>
     <servers />
   </component>
@@ -70,14 +86,18 @@
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="424" y="262" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1583952691646" />
-    <state x="668" y="407" key="NewPhpClassDialog" timestamp="1583952875921">
+    <state x="698" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1583953977730">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state x="668" y="407" key="NewPhpClassDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1583952875921" />
-    <state x="778" y="526" key="NewPhpFileDialog" timestamp="1583951536585">
+    <state x="698" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1583953977730" />
+    <state x="668" y="407" key="NewPhpClassDialog" timestamp="1583959824140">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state x="778" y="526" key="NewPhpFileDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1583951536585" />
+    <state x="668" y="407" key="NewPhpClassDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1583959824140" />
+    <state x="778" y="526" key="NewPhpFileDialog" timestamp="1583959744158">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="778" y="526" key="NewPhpFileDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1583959744158" />
     <state x="461" y="239" key="SettingsEditor" timestamp="1583939970164">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
@@ -87,6 +107,10 @@
     </state>
     <state x="620" y="443" key="com.intellij.ide.util.TipDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1583936904631" />
     <state x="620" y="443" key="com.intellij.ide.util.TipDialog/0.23.1920.1177@0.23.1920.1177" timestamp="1583935650873" />
+    <state x="742" y="519" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583960715343">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="742" y="519" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1200@0.0.1920.1200" timestamp="1583960715343" />
     <state x="625" y="271" width="670" height="676" key="search.everywhere.popup" timestamp="1583936997448">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
