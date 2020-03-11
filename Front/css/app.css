@@ -1,0 +1,10 @@
+
+
+.case{
+    height: 100px;
+    width: 100px;
+    padding-top: 10px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+}
