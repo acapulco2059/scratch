@@ -9,12 +9,11 @@ require_once "../controller/userController.php";
 
 
 $data = json_decode(file_get_contents("php://input"));
-var_dump($data); die;
 if(!empty($data->pseudo) && !empty($data->password))
     {
         $userController = new userController();
         $logUser = $userController->userLog($data->pseudo, $data->password);
-        $logs['succees'] = true;
+        $logs['success'] = true;
     } else
         {
             $logs['success'] = false;

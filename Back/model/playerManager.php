@@ -1,8 +1,6 @@
 <?php
 
-
-namespace model;
-
+require_once ("manager.php");
 
 class playerManager extends manager
 {
@@ -10,22 +8,20 @@ class playerManager extends manager
     {
         $manager = new manager();
         $db = $manager->dbConnect();
-
-        $req = $db->prepare('SELECT id, user_id, DATE_FORMAT(play_date, \'%d /%m /%Y\') as play_date, state FROM player ODER BY DESC LIMIT 5');
-        $req = $db->execute();
-        $result = $req->fetchAll();
+        $req = $db->prepare('SELECT id, user_id, DATE_FORMAT(play_date, \'%d/%m/%Y\') as play_date, state FROM player LIMIT 5');
+        $req->execute();
+        $result = $req->fetchall();
         return $result;
     }
 
-    public function addPlay($user_id, $state)
+    public function addPlayDb($user_id, $state)
     {
         $manager = new manager();
         $db = $manager->dbConnect();
 
-        $req = $db->prepare('INSERT INTO player (user_id, state, play_date) VALUES (?, ?, NOW())');
-        $req = $db->execute(array($user_id, $state));
+        $req = $db->prepare('INSERT INTO player (user_id, state, play_date) VALUES (:user_id, :state, NOW())');
+        $req->bindParam(':user_id', $user_id);
+        $req->bindParam('state', $state);
+        $req->execute();
     }
-
-
-
 }

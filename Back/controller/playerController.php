@@ -1,8 +1,6 @@
 <?php
 
-namespace controller;
-
-use model\playerManager;
+require_once ("../model/playerManager.php");
 
 class playerController
 {
@@ -13,9 +11,10 @@ class playerController
         return $lastPlay;
     }
 
-    public function addPlay()
+    public function addPlay($user_id, $state)
     {
-
+        $playManager = new playerManager();
+        $playManager->addPlayDb($user_id, $state);
     }
 
 }
