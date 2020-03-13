@@ -17,4 +17,16 @@ class userManager extends manager
         return $result;
     }
 
+    public function getUser($user_id)
+    {
+        $manager = new manager();
+        $db = $manager->dbConnect();
+
+        $req = $db->prepare('SELECT * FROM user WHERE id = :user_id');
+        $req->bindParam(':user_id', $user_id);
+        $req->execute();
+        $result = $req->fetch();
+        return $result;
+    }
+
 }

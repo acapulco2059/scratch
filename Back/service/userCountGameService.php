@@ -10,18 +10,12 @@ require_once "../controller/playerController.php";
 
 $data = json_decode(file_get_contents("php://input"));
 //var_dump($data); die;
-if(isset($data->user_id) && isset($data->state))
-    {
-        $playerController = new playerController();
-        $addPlay = $playerController->addPlay($data->user_id, $data->state);
-        $logs['success'] = true;
-        $logs['message'] = "Votre participation a bien été enregistré";
-    }
-    else
-    {
-        $logs['success'] = false;
-        $logs['message'] = "Etat ou Pseudo non valide";
-    }
+if (isset($data->user_id) && isset($data->state)) {
+    $playerController = new playerController();
+    $addPlay = $playerController->userGameCount($data->user_id);
+    $logs['success'] = true;
+    $logs['count']= $addPlay;
+}
 
-    print_r(json_encode($logs));
+print_r(json_encode($logs));
 

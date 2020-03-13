@@ -2,18 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="499719ef-1bbf-4667-a8ff-7b068d6e61a6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Back/service/authService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back/service/userCountGameService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Front/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back/controller/playerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Back/controller/playerController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back/controller/userController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Back/controller/userController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back/model/manager.php" beforeDir="false" afterPath="$PROJECT_DIR$/Back/model/manager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back/model/player.php" beforeDir="false" afterPath="$PROJECT_DIR$/Back/model/player.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back/model/playerManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/Back/model/playerManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back/model/user.php" beforeDir="false" afterPath="$PROJECT_DIR$/Back/model/user.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back/model/userManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/Back/model/userManager.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back/service/addPlayService.php" beforeDir="false" afterPath="$PROJECT_DIR$/Back/service/addPlayService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back/service/listPlayerService.php" beforeDir="false" afterPath="$PROJECT_DIR$/Back/service/listPlayerService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back/service/logService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back/service/authService.php" beforeDir="false" afterPath="$PROJECT_DIR$/Back/service/authService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/Front/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/js/ws/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/js/ws/login.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +52,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -76,7 +76,12 @@
       <workItem from="1583936904248" duration="58000" />
       <workItem from="1583939981510" duration="919000" />
       <workItem from="1583941650311" duration="2076000" />
-      <workItem from="1583974081803" duration="9082000" />
+      <workItem from="1583974081803" duration="24129000" />
+      <workItem from="1584071069452" duration="10000" />
+      <workItem from="1584071203749" duration="156000" />
+      <workItem from="1584071370681" duration="1789000" />
+      <workItem from="1584073219018" duration="2000" />
+      <workItem from="1584073244811" duration="24870000" />
     </task>
     <servers />
   </component>
@@ -84,29 +89,37 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="424" y="262" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583952691646">
+    <state x="424" y="262" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584070667486">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
+    <state x="424" y="262" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1112.366.1112.834/0.0.1920.1200@0.0.1920.1200" timestamp="1584070667486" />
     <state x="424" y="262" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1583952691646" />
     <state x="698" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1583953977730">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="698" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1583953977730" />
-    <state x="1054" y="354" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1583986328309">
+    <state x="1054" y="354" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1584071285336">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
+    <state x="1054" y="354" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1112.366.1112.834/0.0.1920.1200@0.0.1920.1200" timestamp="1584071285336" />
     <state x="1054" y="354" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1583986328309" />
+    <state x="541" y="115" key="CommitChangelistDialog2" timestamp="1584070700927">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="541" y="115" key="CommitChangelistDialog2/-1112.366.1112.834/0.0.1920.1200@0.0.1920.1200" timestamp="1584070700927" />
     <state x="668" y="407" key="NewPhpClassDialog" timestamp="1583959824140">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="668" y="407" key="NewPhpClassDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1583959824140" />
-    <state x="778" y="526" key="NewPhpFileDialog" timestamp="1583959744158">
+    <state x="778" y="526" key="NewPhpFileDialog" timestamp="1584127802450">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
+    <state x="778" y="526" key="NewPhpFileDialog/-1112.366.1112.834/0.0.1920.1200@0.0.1920.1200" timestamp="1584127802450" />
     <state x="778" y="526" key="NewPhpFileDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1583959744158" />
-    <state x="461" y="239" key="SettingsEditor" timestamp="1583977772215">
+    <state x="461" y="239" key="SettingsEditor" timestamp="1584072281654">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
+    <state x="461" y="239" key="SettingsEditor/-1112.366.1112.834/0.0.1920.1200@0.0.1920.1200" timestamp="1584072281654" />
     <state x="461" y="239" key="SettingsEditor/0.0.1920.1200@0.0.1920.1200" timestamp="1583977772215" />
     <state x="620" y="443" key="com.intellij.ide.util.TipDialog" timestamp="1583936904631">
       <screen x="0" y="0" width="1920" height="1200" />
@@ -117,9 +130,22 @@
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="742" y="519" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1200@0.0.1920.1200" timestamp="1583960715343" />
-    <state x="625" y="271" width="670" height="676" key="search.everywhere.popup" timestamp="1583936997448">
+    <state x="625" y="271" width="670" height="676" key="search.everywhere.popup" timestamp="1584069032833">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
+    <state x="625" y="271" width="670" height="676" key="search.everywhere.popup/-1112.366.1112.834/0.0.1920.1200@0.0.1920.1200" timestamp="1584069032833" />
     <state x="625" y="271" width="670" height="676" key="search.everywhere.popup/0.0.1920.1200@0.0.1920.1200" timestamp="1583936997448" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/Front/js/main.js</url>
+          <line>39</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

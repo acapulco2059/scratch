@@ -6,26 +6,84 @@
     <link href="css/app.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<div id="scratch_game">
-    <div id="player">
-    </div>
-    <div id="game_zone">
-        <div id="game">
-            <div id="case_1" class="case"></div>
-            <div id="case_2" class="case"></div>
-            <div id="case_3" class="case"></div>
-            <div id="case_4" class="case"></div>
-            <div id="case_5" class="case"></div>
-            <div id="case_6" class="case"></div>
-            <div id="case_7" class="case"></div>
-            <div id="case_8" class="case"></div>
-            <div id="case_9" class="case"></div>
+<main>
+    <div id="scratch_game">
+        <div id="auth_form">
+            <div>
+                <label for="pseudo">Pseudo :</label>
+                <input type="text" id="pseudo" required>
+            </div>
+            <div>
+                <label for="pseudo">Password :</label>
+                <input type="text" id="password" required>
+            </div>
+            <div id="auth_error">
+
+            </div>
+            <button onclick="auth()">Validez</button>
         </div>
-        <div id="game_info">
+        <div id="player_info">
+            <h2 class="player_info_title"></h2>Bienvenue<br/>
+            <span id="player_name"></span>
         </div>
+
+
+        <div id="player">
+        </div>
+        <section id="game_zone">
+            <table class="game-board">
+                <tbody class="game-grid">
+                <tr class="game-grid-row">
+                    <td class="game-card">
+                        <img class="game-card-img" src="img/1.png" alt="case1">
+                    </td>
+                    <td class="game-card">
+                        <img class="game-card-img" src="img/2.png" alt="case2">
+                    </td>
+                    <td class="game-card">
+                        <img class="game-card-img" src="img/3.png" alt="case3">
+                    </td>
+                </tr>
+                <tr class="game-grid-row">
+                    <td class="game-card">
+                        <img class="game-card-img" src="img/1.png" alt="case1">
+                    </td>
+                    <td class="game-card">
+                        <img class="game-card-img" src="img/2.png" alt="case2">
+                    </td>
+                    <td class="game-card">
+                        <img class="game-card-img" src="img/3.png" alt="case3">
+                    </td>
+                </tr>
+                <tr class="game-grid-row">
+                    <td class="game-card">
+                        <img class="game-card-img" src="img/1.png" alt="case1">
+                    </td>
+                    <td class="game-card">
+                        <img class="game-card-img" src="img/2.png" alt="case2">
+                    </td>
+                    <td class="game-card">
+                        <img class="game-card-img" src="img/3.png" alt="case3">
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <div id="game_info">
+                <div id="play_again">
+                    <button type="button" id="play_again_button" onclick="startGame()">Rejouer</button>
+                </div>
+                <table id="lastPlay_board">
+                    <tbody id="lastPlay_grid">
+
+                    </tbody>
+                </table>
+            </div>
+        </section>
     </div>
-</div>
-<script type="text/javascript" src="js/api"></script>
+
+</main>
+<script type="text/javascript" src="js/main.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<noscript>Désolé, vous ne pouvez pas jouer à ce jeu car votre navigateur ne supporte pas le javaScript</noscript>
 </body>
 </html>

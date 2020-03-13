@@ -13,12 +13,5 @@ if(!empty($data->pseudo) && !empty($data->password))
     {
         $userController = new userController();
         $logUser = $userController->userLog($data->pseudo, $data->password);
-        $logs['success'] = true;
-    } else
-        {
-            $logs['success'] = false;
-            $logs['message'] = "Pseudo ou mot de passe invalide";
-        }
-
-print_r(json_encode($logs));
+    }
 

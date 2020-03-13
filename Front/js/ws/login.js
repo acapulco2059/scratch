@@ -14,5 +14,4 @@ $.ajax({
     error : function (result){
         console.log("failed");
     }
-});
-;
+})

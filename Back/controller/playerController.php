@@ -17,4 +17,10 @@ class playerController
         $playManager->addPlayDb($user_id, $state);
     }
 
+    public function userGameCount($user_id)
+    {
+        $playerManager = new playerManager();
+        $playerManager->userGameCountDb();
+    }
+
 }

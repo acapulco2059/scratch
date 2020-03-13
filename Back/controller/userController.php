@@ -14,14 +14,15 @@ class userController
             {
                 session_start();
                 $_SESSION['pseudo'] = $pseudo;
-                $logs['connect_success'] = true;
+                $logs['success'] = true;
                 $logs['user'] = $result;
             }
         else
             {
                 $logs['success'] = false;
-                $logs['message'] = "Mot de passe un pseudo incorrect";
+                $logs['message'] = "Mot de passe on pseudo incorrect";
             }
+
         print_r(json_encode($logs));
     }
 
