@@ -29,7 +29,7 @@ class playerManager extends manager
     {
         $manager = new manager();
         $db = $manager->dbConnect();
-        $req = $db->prepare('SELECT COUNT(*) as partPlay FROM player WHERE user_id = :user_id AND play_date = DATE(NOW())');
+        $req = $db->prepare('SELECT COUNT(*) as partPlay FROM player WHERE user_id = :user_id AND DATE(play_date) = DATE(NOW())');
         $req->bindParam(':user_id', $user_id);
         $req->execute();
         $result = $req->fetch();

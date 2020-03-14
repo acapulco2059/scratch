@@ -223,9 +223,9 @@ function templateTable(){
         myState.classList.add('player_list_table');
 
         let state = "";
-        if(lastPlayList[j].state = 0){
+        if(lastPlayList[j].state == 0){
             state = "Perdu"
-        } else if (lastPlayList[j].state = 1){
+        } else if (lastPlayList[j].state == 1){
             state = "Gagné"
         }
         myPseudo.textContent = lastPlayList[j].pseudo;
