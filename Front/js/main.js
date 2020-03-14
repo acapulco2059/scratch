@@ -9,7 +9,7 @@ let playerInfo = document.getElementById("player_info");
 let authForm = document.getElementById("auth_form");
 let openedCards = [];
 let lastPlayList = [];
-let tryNumber = 1000
+let tryNumber = 1000;
 let urlAPI = "../../Back/service";
 let user = "";
 let play = "";
@@ -111,7 +111,6 @@ function countGame() {
             data : JSON.stringify($data),
             success: function(test){
                 count = test;
-                startGame();
             },
             error: function () {
                 console.log('ne fonctionne pas');
@@ -146,7 +145,7 @@ function startGame() {
 }
 
 function launchGame() {
-    document.getElementById('remaining_attempt').textContent = parseInt(tryNumber) - parseInt(count.count.partPlay);
+    document.getElementById('remaining_attempt').textContent = tryNumber - count.count.partPlay;
     openedCards = [];
     document.getElementById('play_again').style.display = "none";
     //shuffle cards
