@@ -3,7 +3,6 @@ let cardElements = document.getElementsByClassName('game-card');
 let cardElementsArray = [...cardElements];
 let imgElements = document.getElementsByClassName('game-card-img');
 let imgElementsArray = [...imgElements];
-let counter = document.getElementById('moveCounter');
 let gameInfo = document.getElementById('game_info');
 let gameZone = document.getElementById("game_zone");
 let playerInfo = document.getElementById("player_info");
@@ -17,6 +16,11 @@ let count = "";
 let stateGame = "";
 let lastPlayTable = "";
 
+window.onload = function () {
+    gameZone.style.display = "none";
+    playerInfo.style.display = "none";
+    gameInfo.style.display = "none";
+};
 
 function auth() {
     $data = {
@@ -33,14 +37,14 @@ function auth() {
                 "dataType": "json",
             },
             data : JSON.stringify($data),
-            success: function(test){
-                user = test;
+            success: function(result){
+                user = result;
                 if(user.success == true){
                     authForm.style.display = "none";
                     gameZone.style.removeProperty('display');
                     playerInfo.style.removeProperty('display');
                     document.getElementById("player_name").textContent = user.user.pseudo;
-                    startGame();
+                    countGame();
                 } else {
                     document.getElementById("auth_error").textContent = user.message;
                 }
@@ -52,7 +56,7 @@ function auth() {
     )
 }
 
-function lastPlayCall(callback) {
+function lastPlay() {
     $.ajax(
         urlAPI+'/listPlayerService.php',
         {
@@ -60,16 +64,12 @@ function lastPlayCall(callback) {
             dataType : "json",
             success: function(result){
                 lastPlayList = result;
-                return lastPlayList;
+                countGame();
+                templateTable();
             }
         }
     );
 }
-
-function lastPlay() {
-
-}
-
 
 function addPlay() {
     $data = {
@@ -85,9 +85,8 @@ function addPlay() {
                 "dataType": "json",
             },
             data : JSON.stringify($data),
-            success: function(test){
-                play = test;
-                console.log(play)
+            success: function(result){
+                play = result;
             },
             error: function () {
                 console.log('ne fonctionne pas');
@@ -111,7 +110,7 @@ function countGame() {
             data : JSON.stringify($data),
             success: function(test){
                 count = test;
-                console.log(count)
+                startGame();
             },
             error: function () {
                 console.log('ne fonctionne pas');
@@ -119,8 +118,6 @@ function countGame() {
         }
     )
 }
-
-
 
 function shuffle(array) {
     let currentIndex = array.length,
@@ -139,37 +136,40 @@ function shuffle(array) {
 }
 
 function startGame() {
-    openedCards = [];
-    document.getElementById('play_again').style.display = "none";
-    //shuffle cards
-    let shuffledImages = shuffle(imgElementsArray);
+    if(count.count.partPlay < 3)
+    {
+        document.getElementById('remaining_attempt').textContent = 3 - parseInt(count.count.partPlay);
+        openedCards = [];
+        document.getElementById('play_again').style.display = "none";
+        //shuffle cards
+        let shuffledImages = shuffle(imgElementsArray);
 
-    for(i=0; i<shuffledImages.length; i++) {
-        //remove all images from previous games from each card (if any)
-        cardElements[i].innerHTML = "";
+        for(let i = 0; i<shuffledImages.length; i++) {
+            //remove all images from previous games from each card (if any)
+            cardElements[i].innerHTML = "";
 
-        //add the shuffled images to each card
-        cardElements[i].appendChild(shuffledImages[i]);
-        cardElements[i].type = `${shuffledImages[i].alt}`;
+            //add the shuffled images to each card
+            cardElements[i].appendChild(shuffledImages[i]);
+            cardElements[i].type = `${shuffledImages[i].alt}`;
 
-        //remove all extra classes for game play
-        cardElements[i].classList.remove("show", "open", "match", "disabled");
-        cardElements[i].children[0].classList.remove("show-img");
+            //remove all extra classes for game play
+            cardElements[i].classList.remove("show", "disabled");
+            cardElements[i].children[0].classList.remove("show-img");
+        }
+
+        //listen for events on the cards
+        for(let i = 0; i < cardElementsArray.length; i++) {
+            cardElementsArray[i].addEventListener("click", displayCard)
+        }
+    } else {
+        gameZone.classList.add('disabled');
     }
 
-    //listen for events on the cards
-    for(let i = 0; i < cardElementsArray.length; i++) {
-        cardElementsArray[i].addEventListener("click", displayCard)
-    }
-
-    //count of play
 }
 
 function displayCard() {
     if(openedCards.length <= 2) {
         this.children[0].classList.toggle('show-img');
-        this.classList.toggle("open");
-        this.classList.toggle("show");
         this.classList.toggle("disabled");
         cardOpen(this);
     } else {
@@ -189,12 +189,6 @@ function cardOpen(card) {
     }
 }
 
-
-function gameCounter() {
-    moves++;
-    counter.innerHTML = `${moves} move(s)`;
-}
-
 function matched() {
     stateGame = true;
     addPlay();
@@ -211,40 +205,34 @@ function endGame() {
     lastPlay();
     gameInfo.style.removeProperty('display');
     document.getElementById('play_again').style.removeProperty('display');
-    templateTable();
 }
 
 function templateTable(){
+    document.getElementById('lastPlay_grid').innerHTML = "";
     for(var j = 0; j < lastPlayList.length; j++) {
-        var myTr = document.createElement('tr').classList.add('player_list_table_row');
+        var myTr = document.createElement('tr');
+        myTr.classList.add('player_list_table_row');
+        var myPseudo = document.createElement('td');
+        myPseudo.classList.add('player_list_table');
+        var myPlayDate = document.createElement('td');
+        myPlayDate.classList.add('player_list_table');
+        var myState = document.createElement('td');
+        myState.classList.add('player_list_table');
 
-        for(var k = 0; k < 3; k++){
-            let state = "";
-            if(lastPlayList[k].state = 0){
-                state = "Perdu"
-            } else if (lastPlayList[k].state = 1){
-                state = "Gagné"
-            }
-            var myPseudo = document.createElement((td)).classList.add('player_list_table');
-            var myPlayDate = document.createElement((td)).classList.add('player_list_table');
-            var myState = document.createElement((td)).classList.add('player_list_table');
-
-            myPseudo.textContent = lastPlayList[k].pseudo;
-            myState.textContent = state;
-            myPlayDate.textContent = lastPlayList[k].play_date;
-            myTr.appendChild(myPseudo);
-            myTr.appendChild(myState);
-            myTr.appendChild(myPlayDate);
+        let state = "";
+        if(lastPlayList[j].state = 0){
+            state = "Perdu"
+        } else if (lastPlayList[j].state = 1){
+            state = "Gagné"
         }
+        myPseudo.textContent = lastPlayList[j].pseudo;
+        myState.textContent = state;
+        myPlayDate.textContent = lastPlayList[j].play_date;
+        myTr.appendChild(myPseudo);
+        myTr.appendChild(myState);
+        myTr.appendChild(myPlayDate);
 
         document.getElementById('lastPlay_grid').appendChild(myTr);
 
     }
-}
-
-// wait for some milliseconds before game starts
-window.onload = function () {
-        gameZone.style.display = "none";
-        playerInfo.style.display = "none";
-        gameInfo.style.display = "none";
 }

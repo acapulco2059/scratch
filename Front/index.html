@@ -15,7 +15,7 @@
             </div>
             <div>
                 <label for="pseudo">Password :</label>
-                <input type="text" id="password" required>
+                <input type="password" id="password" required>
             </div>
             <div id="auth_error">
 
@@ -23,8 +23,8 @@
             <button onclick="auth()">Validez</button>
         </div>
         <div id="player_info">
-            <h2 class="player_info_title"></h2>Bienvenue<br/>
-            <span id="player_name"></span>
+            <h2 id="player_info_title">Bienvenue <span id="player_name"></span> !</h2><br/>
+            <span id="remaining_attempt_span">Nombre de jeu restant : <span id="remaining_attempt"></span></span>
         </div>
 
 
@@ -73,6 +73,20 @@
                     <button type="button" id="play_again_button" onclick="startGame()">Rejouer</button>
                 </div>
                 <table id="lastPlay_board">
+                    <thead id="lastPlay_head">
+                    <tr class="player_list_table_head_row">
+                        <td class="player_list_table_head">
+                            Pseudo
+                        </td>
+                        <td class="player_list_table_head">
+                            Résultat
+                        </td>
+                        <td class="player_list_table_head">
+                            Date de jeu
+                        </td>
+
+                    </tr>
+                    </thead>
                     <tbody id="lastPlay_grid">
 
                     </tbody>

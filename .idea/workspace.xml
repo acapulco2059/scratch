@@ -2,18 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="499719ef-1bbf-4667-a8ff-7b068d6e61a6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Back/service/userCountGameService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Front/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back/controller/playerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Back/controller/playerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back/controller/userController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Back/controller/userController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back/model/playerManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/Back/model/playerManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back/model/userManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/Back/model/userManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back/service/addPlayService.php" beforeDir="false" afterPath="$PROJECT_DIR$/Back/service/addPlayService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back/service/authService.php" beforeDir="false" afterPath="$PROJECT_DIR$/Back/service/authService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back/service/userCountGameService.php" beforeDir="false" afterPath="$PROJECT_DIR$/Back/service/userCountGameService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Front/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/Front/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Front/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/js/ws/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/js/ws/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/js/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +76,7 @@
       <workItem from="1584071203749" duration="156000" />
       <workItem from="1584071370681" duration="1789000" />
       <workItem from="1584073219018" duration="2000" />
-      <workItem from="1584073244811" duration="24870000" />
+      <workItem from="1584073244811" duration="34848000" />
     </task>
     <servers />
   </component>
@@ -130,22 +125,10 @@
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="742" y="519" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1200@0.0.1920.1200" timestamp="1583960715343" />
-    <state x="625" y="271" width="670" height="676" key="search.everywhere.popup" timestamp="1584069032833">
+    <state x="625" y="271" width="670" height="676" key="search.everywhere.popup" timestamp="1584154076873">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="625" y="271" width="670" height="676" key="search.everywhere.popup/-1112.366.1112.834/0.0.1920.1200@0.0.1920.1200" timestamp="1584069032833" />
-    <state x="625" y="271" width="670" height="676" key="search.everywhere.popup/0.0.1920.1200@0.0.1920.1200" timestamp="1583936997448" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/Front/js/main.js</url>
-          <line>39</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="625" y="271" width="670" height="676" key="search.everywhere.popup/0.0.1920.1200@0.0.1920.1200" timestamp="1584154076873" />
   </component>
 </project>

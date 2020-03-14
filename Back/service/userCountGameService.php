@@ -9,8 +9,8 @@ require_once "../controller/playerController.php";
 
 
 $data = json_decode(file_get_contents("php://input"));
-//var_dump($data); die;
-if (isset($data->user_id) && isset($data->state)) {
+if (isset($data->user_id))
+{
     $playerController = new playerController();
     $addPlay = $playerController->userGameCount($data->user_id);
     $logs['success'] = true;

@@ -20,7 +20,8 @@ class playerController
     public function userGameCount($user_id)
     {
         $playerManager = new playerManager();
-        $playerManager->userGameCountDb();
+        $count = $playerManager->userGameCountDb($user_id);
+        return $count;
     }
 
 }
