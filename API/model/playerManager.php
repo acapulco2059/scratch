@@ -8,7 +8,7 @@ class playerManager extends manager
     {
         $manager = new manager();
         $db = $manager->dbConnect();
-        $req = $db->prepare('SELECT user_id, DATE_FORMAT(play_date, \'%d/%m/%Y\') as play_date, state, pseudo FROM player INNER JOIN user ON player.user_id = user.id ORDER BY user.id DESC LIMIT 5');
+        $req = $db->prepare('SELECT user_id, DATE_FORMAT(play_date, \'%d/%m/%Y\') as play_date, state, pseudo FROM player INNER JOIN user ON player.user_id = user.id ORDER BY player.id DESC LIMIT 5');
         $req->execute();
         $result = $req->fetchall();
         return $result;
