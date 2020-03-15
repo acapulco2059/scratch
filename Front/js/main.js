@@ -3,13 +3,10 @@ let cardElements = document.getElementsByClassName('game-card');
 let cardElementsArray = [...cardElements];
 let imgElements = document.getElementsByClassName('game-card-img');
 let imgElementsArray = [...imgElements];
-let gameInfo = document.getElementById('game_info');
 let gameZone = document.getElementById("game_zone");
-let playerInfo = document.getElementById("player_info");
-let authForm = document.getElementById("auth_form");
 let openedCards = [];
 let lastPlayList = [];
-let tryNumber = 1000;
+let tryNumber = 10;
 let urlAPI = "../../Back/service";
 let user = "";
 let play = "";
@@ -18,9 +15,10 @@ let stateGame = "";
 let lastPlayTable = "";
 
 window.onload = function () {
-    gameZone.style.display = "none";
-    playerInfo.style.display = "none";
-    gameInfo.style.display = "none";
+    $('#game_zone').hide();
+    $('#player_welcome').hide();
+    $('#player_info').hide();
+    $('#game_stat').hide();
 };
 
 function auth() {
@@ -41,11 +39,12 @@ function auth() {
             success: function(result){
                 user = result;
                 if(user.success == true){
-                    authForm.style.display = "none";
-                    gameZone.style.removeProperty('display');
-                    playerInfo.style.removeProperty('display');
+                    $('#auth_form').hide();
+                    $('#player_welcome').show();
+                    $('#game_zone').show();
+                    $('#player_info').show();
                     document.getElementById("player_name").textContent = user.user.pseudo;
-                    countGame();
+                    countGame(startGame);
                 } else {
                     document.getElementById("auth_error").textContent = user.message;
                 }
@@ -96,7 +95,7 @@ function addPlay() {
     )
 }
 
-function countGame() {
+function countGame(callback) {
     $data = {
         "user_id": parseInt(user.user.id),
     };
@@ -111,6 +110,9 @@ function countGame() {
             data : JSON.stringify($data),
             success: function(test){
                 count = test;
+                if(callback != undefined){
+                    callback();
+                }
             },
             error: function () {
                 console.log('ne fonctionne pas');
@@ -136,10 +138,13 @@ function shuffle(array) {
 }
 
 function startGame() {
-    if(count.count.partPlay < tryNumber)
+    if(count.count.partPlay <= tryNumber - 1)
     {
+        document.getElementById('play_result').textContent = "Bonne chance à vous !";
         launchGame()
     } else {
+        $('#play_again').hide();
+        document.getElementById('play_result').textContent = "Vous avez utilisé tous vos essais pour aujourd'hui.Venez retenter votre chance demain !";
         gameZone.classList.add('disabled');
     }
 }
@@ -147,7 +152,7 @@ function startGame() {
 function launchGame() {
     document.getElementById('remaining_attempt').textContent = tryNumber - count.count.partPlay;
     openedCards = [];
-    document.getElementById('play_again').style.display = "none";
+    $('#play_again').hide();
     //shuffle cards
     let shuffledImages = shuffle(imgElementsArray);
 
@@ -185,11 +190,23 @@ function cardOpen(card) {
     let len = openedCards.length;
     if(len === 3) {
         if(openedCards[0].type === openedCards[1].type && openedCards[1].type === openedCards[2].type) {
-            matched();
+            match(true);
         } else {
-            unmatched();
+            match(false);
         }
     }
+}
+
+function match(result) {
+    if (result == true) {
+        document.getElementById('play_result').textContent = "Super ! Vous avez Gagné !";
+        stateGame = true;
+    } else {
+        document.getElementById('play_result').textContent = "Vous avez Perdu !\nRetentez votre chance !";
+        stateGame = false;
+    }
+    addPlay();
+    endGame();
 }
 
 function matched() {
@@ -206,8 +223,8 @@ function unmatched() {
 
 function endGame() {
     lastPlay();
-    gameInfo.style.removeProperty('display');
-    document.getElementById('play_again').style.removeProperty('display');
+    $('#game_stat').show();
+    $('#play_again').show();
 }
 
 function templateTable(){

@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="499719ef-1bbf-4667-a8ff-7b068d6e61a6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/Front/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Front/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/js/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +74,7 @@
       <workItem from="1584071370681" duration="1789000" />
       <workItem from="1584073219018" duration="2000" />
       <workItem from="1584073244811" duration="34848000" />
-      <workItem from="1584190081627" duration="3953000" />
+      <workItem from="1584190081627" duration="18246000" />
     </task>
     <servers />
   </component>
@@ -80,11 +82,11 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="424" y="262" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584070667486">
+    <state x="424" y="262" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584242101971">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="424" y="262" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1112.366.1112.834/0.0.1920.1200@0.0.1920.1200" timestamp="1584070667486" />
-    <state x="424" y="262" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1583952691646" />
+    <state x="424" y="262" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1584242101971" />
     <state x="698" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1583953977730">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
@@ -117,10 +119,10 @@
     </state>
     <state x="620" y="443" key="com.intellij.ide.util.TipDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1583936904631" />
     <state x="620" y="443" key="com.intellij.ide.util.TipDialog/0.23.1920.1177@0.23.1920.1177" timestamp="1583935650873" />
-    <state x="742" y="519" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583960715343">
+    <state x="742" y="519" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1584241947605">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state x="742" y="519" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1200@0.0.1920.1200" timestamp="1583960715343" />
+    <state x="742" y="519" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1200@0.0.1920.1200" timestamp="1584241947605" />
     <state x="625" y="271" width="670" height="676" key="search.everywhere.popup" timestamp="1584154076873">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>

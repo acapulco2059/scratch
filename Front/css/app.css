@@ -19,6 +19,23 @@ time, mark, audio, video {
     vertical-align: baseline;
 }
 
+@font-face {
+    font-family: 'HoneyBear';
+    src: url('fonts/HoneyBear.woff2') format('woff2'),
+         url('fonts/HoneyBear.woff') format('woff'),
+         url('fonts/HoneyBear.svg#HoneyBear') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Kraash';
+    src: url('fonts/KraashBlack.woff2') format('woff2'),
+         url('fonts/KraashBlack.woff') format('woff'),
+         url('fonts/KraashBlack.svg#KraashBlack') format('svg');
+    font-weight: 900;
+    font-style: normal;
+}
+
 body {
     font-family: monospace, Arial, Helvetica, sans-serif;
 }
@@ -35,16 +52,21 @@ h1 {
 }
 
 h2 {
-    color: #ffffff;
+    color: #ED0400;
     text-align: center;
     font-size: 2em;
     padding: 0.6em;
 }
 
 #scratch_game {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin: 15px;
     padding: 10px;
     min-width: 80%;
+    min-height: 400px;
     background-color: #ffd600;
     border-radius: 5px;
     border-style: solid;
@@ -53,13 +75,88 @@ h2 {
     box-shadow: 0 5px 5px #003942;
 }
 
-.hidden {
-    visibility: collapse;
+#title {
+    margin-top: 20px;
+    color: #003942;
+    font-family: Kraash;
 }
 
+#game_zone {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
 
-.game-board {
-    max-width: 50%;
+#game {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+#game_infos {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 50%;
+}
+
+#auth_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#auth_form > .auth_input {
+    margin: 15px;
+}
+
+#auth_button{
+    font-family: honeyBear;
+    background-color: #0088ec;
+    transition: background-color 700ms;
+    transition: color 700ms;
+    margin-top: 20px;
+    color: #ffffff;
+    width: 200px;
+    height: 60px;
+    border-radius: 5px;
+    font-size: 1.5em;
+    border: 2px solid #003942;
+}
+
+#auth_button:hover {
+    background-color: #003942;
+    color: #0088ec;
+}
+
+#play_again {
+    display: flex;
+    justify-content: center;
+}
+
+#play_again_button {
+    font-family: honeyBear;
+    background-color: #0088ec;
+    transition: background-color 700ms;
+    transition: color 700ms;
+    margin-top: 20px;
+    color: #ffffff;
+    width: 200px;
+    height: 60px;
+    border-radius: 5px;
+    font-size: 1.5em;
+    border: 2px solid #003942;
+}
+
+#play_again_button:hover {
+    background-color: #003942;
+    color: #0088ec;
+}
+
+#game-board {
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 15px;
@@ -67,14 +164,55 @@ h2 {
     background-color: #0088ec;
 }
 
+#player_welcome {
+    font-family: HoneyBear;
+    font-size: 1.2em;
+}
+
+#player_info {
+    margin: 15px;
+}
+
+#play_result {
+    margin: 15px;
+}
+
+#game_stat {
+    margin: 15px;
+}
+
+#lastPlay_board {
+    width: 90%;
+}
+
+#lastPlay_head {
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+#lastPlay_board tr {
+    text-align: center;
+}
+
+#lastPlay_board td {
+    text-align: center;
+}
+
+.hidden {
+    visibility: collapse;
+}
+
+
+
+
 .game-grid-row {
     display: flex;
     flex-wrap: nowrap;
 }
 
 .game-card {
-    width: 4.5em;
-    height: 4.5em;
+    width: 6rem;
+    height: 6rem;
     background-color: #003942;
     border-radius: 0.3em;
     margin: 0.8em;
@@ -85,8 +223,8 @@ h2 {
 .game-card-img {
     visibility: hidden;
     object-fit: cover;
-    width: 4.5em;
-    height: 4.5em;
+    width: 6rem;
+    height: 6rem;
 }
 
 .show-img {
@@ -116,27 +254,15 @@ h2 {
 
 /* Media Queries */
 @media only screen and (max-width: 767px) {
-    .game-card, .game-card-img {
-        width: 10em;
-        height: 10em;
-    }
+#game_zone {
+    flex-direction: column;
+}
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-    .game-card, .game-card-img {
-        width: 15em;
-        height: 15em;
-    }
+
 }
 
 @media only screen and (min-width: 992px) {
-    .game-card, .game-card-img {
-        width: 15em;
-        height: 15em;
-    }
 
-    .game-card, .game-card-img {
-        width: 15em;
-        height: 15em;
-    }
 }

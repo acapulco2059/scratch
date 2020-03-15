@@ -8,89 +8,94 @@
 <body>
 <main>
     <div id="scratch_game">
+        <div id="game_title">
+            <h1 id="title">Grand Jeu Concours !</h1>
+            <h2 id="player_welcome">Bienvenue <span id="player_name"></span> !</h2><br/>
+        </div>
         <div id="auth_form">
-            <div>
+            <h2>Connectez-vous</h2>
+            <div class="auth_input">
                 <label for="pseudo">Pseudo :</label>
                 <input type="text" id="pseudo" required>
             </div>
-            <div>
+            <div class="auth_input">
                 <label for="pseudo">Password :</label>
                 <input type="password" id="password" required>
             </div>
             <div id="auth_error">
-
             </div>
-            <button onclick="auth()">Validez</button>
-        </div>
-        <div id="player_info">
-            <h2 id="player_info_title">Bienvenue <span id="player_name"></span> !</h2><br/>
-            <span id="remaining_attempt_span">Nombre de jeu restant : <span id="remaining_attempt"></span></span>
-        </div>
-
-
-        <div id="player">
+            <button id="auth_button" onclick="auth()">Validez</button>
         </div>
         <section id="game_zone">
-            <table class="game-board">
-                <tbody class="game-grid">
-                <tr class="game-grid-row">
-                    <td class="game-card">
-                        <img class="game-card-img" src="img/1.png" alt="case1">
-                    </td>
-                    <td class="game-card">
-                        <img class="game-card-img" src="img/2.png" alt="case2">
-                    </td>
-                    <td class="game-card">
-                        <img class="game-card-img" src="img/3.png" alt="case3">
-                    </td>
-                </tr>
-                <tr class="game-grid-row">
-                    <td class="game-card">
-                        <img class="game-card-img" src="img/1.png" alt="case1">
-                    </td>
-                    <td class="game-card">
-                        <img class="game-card-img" src="img/2.png" alt="case2">
-                    </td>
-                    <td class="game-card">
-                        <img class="game-card-img" src="img/3.png" alt="case3">
-                    </td>
-                </tr>
-                <tr class="game-grid-row">
-                    <td class="game-card">
-                        <img class="game-card-img" src="img/1.png" alt="case1">
-                    </td>
-                    <td class="game-card">
-                        <img class="game-card-img" src="img/2.png" alt="case2">
-                    </td>
-                    <td class="game-card">
-                        <img class="game-card-img" src="img/3.png" alt="case3">
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-            <div id="game_info">
+            <div id="game_infos">
+                <div id="player_info">
+                    <span id="remaining_attempt_span">Nombre de jeu restant : <span id="remaining_attempt"></span></span>
+                </div>
+                <div id="play_result">
+                </div>
+                <div id="game_stat">
+                    <table id="lastPlay_board">
+                        <thead id="lastPlay_head">
+                        <tr class="player_list_table_head_row">
+                            <td class="player_list_table_head">
+                                Pseudo
+                            </td>
+                            <td class="player_list_table_head">
+                                Résultat
+                            </td>
+                            <td class="player_list_table_head">
+                                Date de jeu
+                            </td>
+                        </tr>
+                        </thead>
+                        <tbody id="lastPlay_grid">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="game">
+                <table id="game-board">
+                    <tbody class="game-grid">
+                    <tr class="game-grid-row">
+                        <td class="game-card">
+                            <img class="game-card-img" src="img/1.png" alt="case1">
+                        </td>
+                        <td class="game-card">
+                            <img class="game-card-img" src="img/2.png" alt="case2">
+                        </td>
+                        <td class="game-card">
+                            <img class="game-card-img" src="img/3.png" alt="case3">
+                        </td>
+                    </tr>
+                    <tr class="game-grid-row">
+                        <td class="game-card">
+                            <img class="game-card-img" src="img/1.png" alt="case1">
+                        </td>
+                        <td class="game-card">
+                            <img class="game-card-img" src="img/2.png" alt="case2">
+                        </td>
+                        <td class="game-card">
+                            <img class="game-card-img" src="img/3.png" alt="case3">
+                        </td>
+                    </tr>
+                    <tr class="game-grid-row">
+                        <td class="game-card">
+                            <img class="game-card-img" src="img/1.png" alt="case1">
+                        </td>
+                        <td class="game-card">
+                            <img class="game-card-img" src="img/2.png" alt="case2">
+                        </td>
+                        <td class="game-card">
+                            <img class="game-card-img" src="img/3.png" alt="case3">
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
                 <div id="play_again">
                     <button type="button" id="play_again_button" onclick="startGame()">Rejouer</button>
                 </div>
-                <table id="lastPlay_board">
-                    <thead id="lastPlay_head">
-                    <tr class="player_list_table_head_row">
-                        <td class="player_list_table_head">
-                            Pseudo
-                        </td>
-                        <td class="player_list_table_head">
-                            Résultat
-                        </td>
-                        <td class="player_list_table_head">
-                            Date de jeu
-                        </td>
-
-                    </tr>
-                    </thead>
-                    <tbody id="lastPlay_grid">
-
-                    </tbody>
-                </table>
             </div>
         </section>
     </div>
