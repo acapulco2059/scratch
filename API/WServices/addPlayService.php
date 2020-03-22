@@ -5,7 +5,7 @@ header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
 header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
-require_once "../controller/playerController.php";
+require_once('../controller/playerController.php');
 
 
 $data = json_decode(file_get_contents("php://input"));

@@ -1,6 +1,6 @@
 <?php
 
-require_once ("../model/playerManager.php");
+require_once ('../model/playerManager.php');
 
 class playerController
 {

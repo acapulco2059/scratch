@@ -1,38 +1,109 @@
 /* Media Queries */
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 806px) {
+    .game-card{
+        width: 5rem;
+        height: 5rem;
+    }
+    .game-card-img {
+        width: 5rem;
+        height: 5rem;
+    }
     #game_zone {
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
     #game {
-        flex-direction: row;
+        flex-direction: column;
         width: 100%;
+    }
+    #game_infos {
+        align-items: center;
+    }
+    #title {
+        font-size: 0.9rem;
+    }
+    #player_welcome {
+        font-size: 0.8rem;
     }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1224px) {
+@media only screen and (min-width: 807px) and (max-width: 1224px) {
     .game-card{
-        width: 8rem;
-        height: 8rem;
+        width: 14rem;
+        height: 14rem;
     }
     .game-card-img {
-        width: 8rem;
-        height: 8rem;
+        width: 14rem;
+        height: 14rem;
     }
     #game {
-        flex-direction: row;
+        flex-direction: column;
         width: 100%;
+    }
+    #game_zone {
+        flex-direction: column-reverse;
+    }
+    #game_infos {
+        align-items: center;
+    }
+    #play_again_button {
+        width: 400px;
+        height: 140px;
+        font-size: 3.5em;
+    }
+    #player_info {
+        font-size: 2rem;
+    }
+
+    #play_result {
+        font-size: 2rem;
+    }
+    #title {
+        font-size: 2em;
+    }
+    #player_welcome {
+        font-size: 1.2rem;
     }
 
 }
 
 @media only screen and (min-width: 1224px) {
     .game-card{
-        width: 10rem;
-        height: 10rem;
+        width: 14rem;
+        height: 14rem;
     }
     .game-card-img {
-        width: 10rem;
-        height: 10rem;
+        width: 14rem;
+        height: 14rem;
+    }
+    #game {
+        flex-direction: column;
+        width: 65%;
+    }
+    #game_zone {
+        flex-direction: row;
+    }
+    #game_infos {
+        width: 35%;
+    }
+    #game_infos {
+        align-items: flex-start;
+    }
+    #play_again_button {
+        width: 200px;
+        height: 60px;
+        font-size: 1.5em;
+    }
+    #player_info {
+        font-size: 1.5rem;
+    }
+    #play_result {
+        font-size: 1.5rem;
+    }
+    #title {
+        font-size: 3.5em;
+    }
+    #player_welcome {
+        font-size: 1.2rem;
     }
 }
 
@@ -52,7 +123,7 @@ time, mark, audio, video {
     margin: 0;
     padding: 0;
     border: 0;
-    font-size: 100%;
+    /*font-size: 100%;*/
     font: inherit;
     vertical-align: baseline;
 }
@@ -60,16 +131,16 @@ time, mark, audio, video {
 @font-face {
     font-family: 'HoneyBear';
     src: url('fonts/HoneyBear.woff2') format('woff2'),
-         url('fonts/HoneyBear.woff') format('woff'),
-         url('fonts/HoneyBear.svg#HoneyBear') format('svg');
+    url('fonts/HoneyBear.woff') format('woff'),
+    url('fonts/HoneyBear.svg#HoneyBear') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'Kraash';
     src: url('fonts/KraashBlack.woff2') format('woff2'),
-         url('fonts/KraashBlack.woff') format('woff'),
-         url('fonts/KraashBlack.svg#KraashBlack') format('svg');
+    url('fonts/KraashBlack.woff') format('woff'),
+    url('fonts/KraashBlack.svg#KraashBlack') format('svg');
     font-weight: 900;
     font-style: normal;
 }
@@ -84,13 +155,11 @@ em {
 
 h1 {
     text-align: center;
-    font-size: 2em;
     padding: 0.6em;
-    text-decoration: underline;
 }
 
 h2 {
-    color: #ED0400;
+    color: #0088ec;
     text-align: center;
     font-size: 2em;
     padding: 0.6em;
@@ -105,7 +174,7 @@ h2 {
     padding: 10px;
     min-width: 80%;
     min-height: 400px;
-    background-color: #ffd600;
+    background-image: url("../img/texture.jpg");
     border-radius: 5px;
     border-style: solid;
     border-width: 2px;
@@ -115,28 +184,24 @@ h2 {
 
 #title {
     margin-top: 20px;
-    color: #003942;
+    color: #ED0400;
     font-family: Kraash;
 }
 
 #game_zone {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
 }
 
 #game {
     display: flex;
-    flex-direction: column;
-    width: 50%;
+    justify-content: center;
 }
 
 #game_infos {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    width: 50%;
 }
 
 #auth_form {
@@ -181,10 +246,7 @@ h2 {
     transition: color 700ms;
     margin-top: 20px;
     color: #ffffff;
-    width: 200px;
-    height: 60px;
     border-radius: 5px;
-    font-size: 1.5em;
     border: 2px solid #003942;
 }
 
@@ -204,7 +266,6 @@ h2 {
 
 #player_welcome {
     font-family: HoneyBear;
-    font-size: 1.2em;
 }
 
 #player_info {
@@ -220,7 +281,7 @@ h2 {
 }
 
 #lastPlay_board {
-    width: 90%;
+    width: 100%;
 }
 
 #lastPlay_head {
@@ -246,8 +307,6 @@ h2 {
 }
 
 .game-card {
-    width: 6rem;
-    height: 6rem;
     background-color: #003942;
     border-radius: 0.3em;
     margin: 0.8em;
@@ -258,8 +317,6 @@ h2 {
 .game-card-img {
     visibility: hidden;
     object-fit: cover;
-    width: 6rem;
-    height: 6rem;
 }
 
 .show-img {

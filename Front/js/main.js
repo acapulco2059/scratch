@@ -7,12 +7,11 @@ let gameZone = document.getElementById("game_zone");
 let openedCards = [];
 let lastPlayList = [];
 let tryNumber = 10;
-let urlAPI = "../../API/service";
+let urlAPI = "../../API/WServices";
 let user = "";
 let play = "";
 let count = "";
 let stateGame = "";
-let lastPlayTable = "";
 
 window.onload = function () {
     $('#game_zone').hide();
@@ -38,6 +37,7 @@ function auth() {
             data : JSON.stringify($data),
             success: function(result){
                 user = result;
+                console.log(user.success);
                 if(user.success == true){
                     $('#auth_form').hide();
                     $('#player_welcome').show();
@@ -171,6 +171,7 @@ function launchGame() {
 
     //listen for events on the cards
     for(let i = 0; i < cardElementsArray.length; i++) {
+        console.log(cardElementsArray[i]);
         cardElementsArray[i].addEventListener("click", displayCard)
     }
 }
@@ -205,18 +206,6 @@ function match(result) {
         document.getElementById('play_result').textContent = "Vous avez Perdu !\nRetentez votre chance !";
         stateGame = false;
     }
-    addPlay();
-    endGame();
-}
-
-function matched() {
-    stateGame = true;
-    addPlay();
-    endGame();
-}
-
-function unmatched() {
-    stateGame = false;
     addPlay();
     endGame();
 }

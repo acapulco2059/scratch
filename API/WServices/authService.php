@@ -5,8 +5,13 @@ header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
 header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
-require_once ("../controller/playerController.php");
+require_once('../controller/userController.php');
 
-$playerController = new playerController();
-$listPlayer = $playerController->getLastPlay();
-print_r(json_encode($listPlayer));
+
+$data = json_decode(file_get_contents("php://input"));
+if(!empty($data->pseudo) && !empty($data->password))
+    {
+        $userController = new userController();
+        $logUser = $userController->userLog($data->pseudo, $data->password);
+    }
+

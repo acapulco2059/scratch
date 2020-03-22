@@ -1,6 +1,6 @@
 <?php
 
-require_once ('../model/userManager.php');
+require_once("../model/userManager.php");
 
 class userController
 {

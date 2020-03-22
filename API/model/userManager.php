@@ -1,6 +1,6 @@
 <?php
 
-require_once ("manager.php");
+require_once("manager.php");
 
 class userManager extends manager
 {

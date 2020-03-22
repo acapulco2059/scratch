@@ -1,6 +1,6 @@
 <?php
 
-require_once ("manager.php");
+require_once("manager.php");
 
 class playerManager extends manager
 {
@@ -33,6 +33,16 @@ class playerManager extends manager
         $req->bindParam(':user_id', $user_id);
         $req->execute();
         $result = $req->fetch();
+        return $result;
+    }
+
+    public function getWinner()
+    {
+        $manager = new manager();
+        $db = $manager->dbConnect();
+        $req = $db->prepare('SELECT player.id, user_id, pseudo, email, DATE_FORMAT(play_date, \'%d/%m/%Y\') as play_date, state FROM player INNER JOIN user ON player.user_id = user.id WHERE state = 1 AND DATE(play_date) = DATE(NOW())');
+        $req->execute();
+        $result = $req->fetchall();
         return $result;
     }
 }
