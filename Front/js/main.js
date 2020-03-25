@@ -6,7 +6,7 @@ let imgElementsArray = [...imgElements];
 let gameZone = document.getElementById("game_zone");
 let openedCards = [];
 let lastPlayList = [];
-let tryNumber = 10;
+let tryNumber = 30;
 let urlAPI = "../../API/WServices";
 let user = "";
 let play = "";
@@ -37,7 +37,6 @@ function auth() {
             data : JSON.stringify($data),
             success: function(result){
                 user = result;
-                console.log(user.success);
                 if(user.success == true){
                     $('#auth_form').hide();
                     $('#player_welcome').show();
@@ -153,6 +152,7 @@ function launchGame() {
     document.getElementById('remaining_attempt').textContent = tryNumber - count.count.partPlay;
     openedCards = [];
     $('#play_again').hide();
+
     //shuffle cards
     let shuffledImages = shuffle(imgElementsArray);
 
@@ -161,26 +161,39 @@ function launchGame() {
         cardElements[i].innerHTML = "";
 
         //add the shuffled images to each card
-        cardElements[i].appendChild(shuffledImages[i]);
-        cardElements[i].type = `${shuffledImages[i].alt}`;
-
-        //remove all extra classes for game play
-        cardElements[i].classList.remove("show", "disabled");
-        cardElements[i].children[0].classList.remove("show-img");
+        $(cardElements[i]).wScratchPad({
+            size: 40,
+            bg: shuffledImages[i].src,
+            fg: '#003942',
+            scratchUp: function (e, percent) {
+                cardElements[i].type = `${shuffledImages[i].alt}`;
+                if(percent > 20) {
+                    this.clear();
+                    displayCard(cardElements[i]);
+                }
+            },
+            enable: true,
+        });
+        // cardElements[i].appendChild(shuffledImages[i]);
+        // cardElements[i].type = `${shuffledImages[i].alt}`;
+        //
+        // //remove all extra classes for game play
+        // cardElements[i].classList.remove("show", "disabled");
+        // cardElements[i].children[0].classList.remove("show-img");
     }
 
     //listen for events on the cards
     for(let i = 0; i < cardElementsArray.length; i++) {
-        console.log(cardElementsArray[i]);
-        cardElementsArray[i].addEventListener("click", displayCard)
+//        cardElementsArray[i].addEventListener("click", displayCard)
     }
 }
 
-function displayCard() {
+function displayCard(cardElement) {
     if(openedCards.length <= 2) {
-        this.children[0].classList.toggle('show-img');
-        this.classList.toggle("disabled");
-        cardOpen(this);
+        $(cardElement).wScratchPad('enable', false);
+        // this.children[0].classList.toggle('show-img');
+        // this.classList.toggle("disabled");
+        cardOpen(cardElement);
     } else {
         endGame();
     }
@@ -212,6 +225,9 @@ function match(result) {
 
 function endGame() {
     lastPlay();
+    for(let j = 0; j < cardElements.length; j++) {
+        $(cardElements[j]).wScratchPad('enable', false);
+    };
     $('#game_stat').show();
     $('#play_again').show();
 }
@@ -244,4 +260,44 @@ function templateTable(){
         document.getElementById('lastPlay_grid').appendChild(myTr);
 
     }
+}
+
+function templateGameTable() {
+
+    return `                
+                    <tbody class="game-grid">
+                    <tr class="game-grid-row">
+                        <td class="game-card">
+                            <img class="game-card-img" src="img/1.png" alt="case1">
+                        </td>
+                        <td class="game-card">
+                            <img class="game-card-img" src="img/2.png" alt="case2">
+                        </td>
+                        <td class="game-card">
+                            <img class="game-card-img" src="img/3.png" alt="case3">
+                        </td>
+                    </tr>
+                    <tr class="game-grid-row">
+                        <td class="game-card">
+                            <img class="game-card-img" src="img/1.png" alt="case1">
+                        </td>
+                        <td class="game-card">
+                            <img class="game-card-img" src="img/2.png" alt="case2">
+                        </td>
+                        <td class="game-card">
+                            <img class="game-card-img" src="img/3.png" alt="case3">
+                        </td>
+                    </tr>
+                    <tr class="game-grid-row">
+                        <td class="game-card">
+                            <img class="game-card-img" src="img/1.png" alt="case1">
+                        </td>
+                        <td class="game-card">
+                            <img class="game-card-img" src="img/2.png" alt="case2">
+                        </td>
+                        <td class="game-card">
+                            <img class="game-card-img" src="img/3.png" alt="case3">
+                        </td>
+                    </tr>
+                    </tbody>`
 }
